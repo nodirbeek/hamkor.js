@@ -117,14 +117,56 @@
 //     alert('asas')
 // })
 // }bunda barcha xodilasalarni ishlatadi
-let i=0
-const btns = document.querySelectorAll('.btn')
-const addElement=(event)=>{
-    i++
-    console.log(i)
-}
-btns.forEach((item)=> {
-item.addEventListener('click',addElement)
-})
+// let i=0
+// const btns = document.querySelectorAll('.btn')
+// const addElement=(event)=>{
+//     i++
+//     console.log(i)
+// }
+// btns.forEach((item)=> {
+// item.addEventListener('click',addElement)
+// })
 //    event.target.remove() // shu elementi o'chiradi
 //    target bu aynan o'sha elemntni qaytaradi
+
+// console.log(document.body.childNodes)
+// console.log(document.body.firstChild);
+// console.log(document.querySelector('.btn').nextElementSibling);
+/* <script defer scr></script> defer bu daslab dom ishledi keyin jslar ishledi */
+/* <script async scr></script> async jslani hajmiga qarab ishga tushadi */
+// function name1() {
+//     console.log('Birinchi breakpoint');
+// }
+// name1()
+// function name2() {
+//     console.log('Ikkinchi breakpoint');
+// }
+// name2()
+
+// const btns=document.querySelectorAll('button')
+
+// btns.forEach((item,idx,btns)=>{
+//     item.addEventListener('click',()=>{
+// if (item.classList.contains('btn-info')) { //contains bu agar mavjud bo'lsa true qaytadi
+// item.classList.remove('btn-info')
+// item.classList.add('btn-success')
+// }
+// else {
+// item.classList.remove('btn-success')
+// item.classList.add('btn-info')
+// }
+// item.classList.toggle('btn-info') // true bo'lsa false qiladi false bo'lsa true qiladi
+//     })
+
+// })
+const wrapper=document.querySelector('.wrapper')
+
+wrapper.addEventListener('click',(event)=>{
+    if (event.target && event.target.classList.contains('btn-danger')) {
+    console.log(event.target);
+    }
+})
+const btn=document.createElement('button')
+btn.classList.add('btn')
+btn.classList.add('btn-danger')
+wrapper.append(btn)
